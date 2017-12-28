@@ -6,11 +6,8 @@
 /.idea
 /.vagrant
 /nbproject
-Homestead.json
-Homestead.yaml
-npm-debug.log
+pm-debug.log
 yarn-error.log
-.env
 .env.dusk.*
 .DS_Store
 Thumbs.db
