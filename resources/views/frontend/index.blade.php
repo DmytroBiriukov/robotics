@@ -1,157 +1,276 @@
-{{--<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Video.js VAST Example</title>
-
-    <link href="http://vjs.zencdn.net/4.7.1/video-js.css" rel="stylesheet">
-    <link href="lib/videojs-contrib-ads/videojs.ads.css" rel="stylesheet" type="text/css">
-    <link href="videojs.vast.css" rel="stylesheet" type="text/css">
-
-    <style type="text/css">
-        .description {
-            background-color:#eee;
-            border: 1px solid #777;
-            padding: 10px;
-            font-size: .8em;
-            line-height: 1.5em;
-            font-family: Verdana, sans-serif;
-        }
-        .example-video-container {
-            display: inline-block;
-        }
-    </style>
-    <!--[if lt IE 9]><script src="lib/es5.js"></script><![endif]-->
-    <script src="http://vjs.zencdn.net/4.7.1/video.js"></script>
-    <script src="lib/videojs-contrib-ads/videojs.ads.js"></script>
-
-    <script src="lib/vast-client.js"></script>
-    <script src="videojs.vast.js"></script>
-</head>
-<body>
-<p class="description">Video.js VAST plugin examples.</p>
-
-<div class="example-video-container">
-    <p class="description">No autoplay.</p>
-
-    <video id="vid1" class="video-js vjs-default-skin" controls preload="auto"
-           poster="http://video-js.zencoder.com/oceans-clip.png"
-           data-setup='{}'
-           width='640'
-           height='400'
-    >
-        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
-        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
-        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>
-        <p>Video Playback Not Supported</p>
-    </video>
-</div>
-
-<div class="example-video-container">
-    <p class="description">With autoplay.</p>
-
-    <video id="vid2" class="video-js vjs-default-skin" autoplay controls preload="auto"
-           poster="http://video-js.zencoder.com/oceans-clip.png"
-           data-setup='{}'
-           width='640'
-           height='400'
-    >
-        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
-        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
-        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>
-        <p>Video Playback Not Supported</p>
-    </video>
-</div>
-
-<script>
-    var vid1 = videojs('vid1'),
-        vid2 = videojs('vid2');
-    vid1.muted(true);
-    vid1.ads();
-    vid1.vast({
-        url: 'http://videoads.theonion.com/vast/270.xml'
-    });
-    vid2.muted(true);
-    vid2.ads();
-    vid2.vast({
-        url: 'http://videoads.theonion.com/vast/270.xml'
-    });
-</script>
-
-</body>
-</html>--}}
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="row mb-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa fa-home"></i> {{ __('navs.general.home') }}
+
+    <!-- *****************************************************************************************************************
+	 HEADERWRAP
+	 ***************************************************************************************************************** -->
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h3>Show your work with this beautiful theme</h3>
+                    <h1>Eyecatching Bootstrap 3 Theme.</h1>
+                    <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
+                    <h5>More Lorem Ipsum added here too.</h5>
                 </div>
-                <div class="card-body">
-                    {{ __('strings.frontend.welcome_to', ['place' => app_name()]) }}
+                <div class="col-lg-8 col-lg-offset-2 himg">
+                    <img src="assets/img/browser.png" class="img-responsive">
                 </div>
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /headerwrap -->
 
 
-    <video controls poster="http://vjs.zencdn.net/v/oceans.png" preload="auto"
-           data-setup='{
-      "plugins": {
-      "vastClient": {
-        "adTagUrl": "http://pubads.g.doubleclick.net/gampad/ads?env=....",
-        "adCancelTimeout": 5000,
-        "adsEnabled": true
-        }
-      }
-    }'>
-    >   <!--    autoplay  preload = auto/metadata/none   -->
-        <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-        <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
-        <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-    </video>
-
-
-
-
-
-
-
-    <div class="row mb-4">
-        <div class="col">
-            <example-component></example-component>
-        </div><!--col-->
-    </div><!--row-->
-
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa fa-fort-awesome"></i> Font Awesome {{ __('strings.frontend.test') }}
+    <!-- *****************************************************************************************************************
+     SERVICE LOGOS
+     ***************************************************************************************************************** -->
+    <div id="service">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-4">
+                    <i class="fa fa-code-fork"></i>
+                    <h4>Handsomely Crafted</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
                 </div>
-                <div class="card-body">
-                    <i class="fa fa-home"></i>
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-pinterest"></i>
-                </div><!--card-body-->
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
+                <div class="col-md-4">
+                    <i class="fa fa-terminal"></i>
+                    <h4>Retina Ready</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-code"></i>
+                    <h4>Quality Theme</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+                </div>
+            </div>
+        </div><! --/container -->
+    </div><! --/service -->
+
+    <!-- *****************************************************************************************************************
+     PORTFOLIO SECTION
+     ***************************************************************************************************************** -->
+    <div id="portfoliowrap">
+        <h3>RECENT PROJECTS</h3>
+
+        <div class="portfolio-centered">
+            <div class="recentitems portfolio">
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_09.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_09.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item web-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_02.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_03.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_04.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item books">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_05.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_05.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_06.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_06.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item books">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_07.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_07.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_08.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_08.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item web-design">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_01.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_01.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+                <div class="portfolio-item books">
+                    <div class="he-wrap tpl6">
+                        <img src="assets/img/portfolio/portfolio_10.jpg" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
+                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_10.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                </div><!-- end col-12 -->
+
+            </div><!-- portfolio -->
+        </div><!-- portfolio container -->
+    </div><!--/Portfoliowrap -->
+
+
+    <!-- *****************************************************************************************************************
+     MIDDLE CONTENT
+     ***************************************************************************************************************** -->
+
+    <div class="container mtb">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-1">
+                <h4>More About Our Agency.</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                <p><br/><a href="about.html" class="btn btn-theme">More Info</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <h4>Where to buy Arduino in Kiev</h4>
+                <div class="hline"></div>
+                <p><a href="https://arduino-ua.com/">Arduino-Ua</a></p>
+                <p><a href="https://miniboard.com.ua">Miniboard</a></p>
+                <p><a href="http://arduinos.com.ua">Arduinos</a></p>
+                <p><a href="http://arduino-kit.com.ua/">Arduino Kit</a></p>
+                <p><a href="http://uamper.com">microAmper</a></p>
+                <p><a href="http://modules.pp.ua">Modules</a></p>
+                https://raspberry.com.ua
+
+                https://www.rcscomponents.kiev.ua/catalog/arduino/620 Radiomag
+
+            </div>
+
+            <div class="col-lg-3">
+                <h4>Latest Posts</h4>
+                <div class="hline"></div>
+                <p><a href="single-post.html">Our new site is live now.</a></p>
+                <p><a href="single-post.html">Retina ready is not an option.</a></p>
+                <p><a href="single-post.html">Bootstrap 3 framework is the best.</a></p>
+                <p><a href="single-post.html">You need this theme, buy it now.</a></p>
+                <p><a href="single-post.html">This theme is what you need.</a></p>
+            </div>
+
+        </div><! --/row -->
+    </div><! --/container -->
+
+    <!-- *****************************************************************************************************************
+     TESTIMONIALS
+     ***************************************************************************************************************** -->
+    <div id="twrap">
+        <div class="container centered">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <i class="fa fa-comment-o"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <h4><br/>Marcel Newman</h4>
+                    <p>WEB DESIGNER - BLACKTIE.CO</p>
+                </div>
+            </div><! --/row -->
+        </div><! --/container -->
+    </div><! --/twrap -->
+
+    <!-- *****************************************************************************************************************
+     TECHOLOGIES
+     ***************************************************************************************************************** -->
+    <div id="cwrap">
+        <div class="container">
+            <div class="row centered">
+                <h3>TECHNOLOGY STACK</h3>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img src="assets/img/clients/client01.png" class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img src="assets/img/clients/client02.png" class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img src="assets/img/clients/client03.png" class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img src="assets/img/clients/client04.png" class="img-responsive">
+                </div>
+            </div><! --/row -->
+        </div><! --/container -->
+    </div><! --/cwrap -->
+
+
 @endsection
-
-{{--
-
-
-https://github.com/MailOnline/videojs-vast-vpaid/
-https://github.com/theonion/videojs-vast-plugin/blob/master/example.html
-https://github.com/googleads/videojs-ima
-
-
-
-var video=document.querySelector('video');
-video.play();
-video.pause();
-video.playbackRate = 3.0;--}}

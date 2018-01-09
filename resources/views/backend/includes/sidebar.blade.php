@@ -14,6 +14,46 @@
             </li>
 
             @if ($logged_in_user->isAdmin())
+
+
+                <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/robotic*'), 'open') }}">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="icon-user"></i> {{ 'robotics' }}
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/robotic/project*')) }}" href="{{ route('admin.robotics.projects.index') }}">
+                                {{ 'projects' }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/robotic/post*')) }}" href="{{ route('admin.robotics.projects.index') }}">
+                                {{ 'posts' }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/robotic/tool*')) }}" href="{{ route('admin.robotics.projects.index') }}">
+                                {{ 'tools' }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/robotic/post*')) }}" href="{{ route('admin.robotics.projects.index') }}">
+                                {{ 'comments' }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/robotic/post*')) }}" href="{{ route('admin.robotics.projects.index') }}">
+                                {{ 'tags' }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
+
                 <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/auth*'), 'open') }}">
                     <a class="nav-link nav-dropdown-toggle" href="#">
                         <i class="icon-user"></i> {{ __('menus.backend.access.title') }}
